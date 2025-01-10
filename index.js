@@ -1,12 +1,9 @@
 const { express, client } = require("./common");
 const app = express();
 const PORT = 3000;
+
 app.use(express.json());
 app.use(require("morgan")("dev"));
-
-// app.get("/api/flavors", (req, res) => {
-//   res.status(200).json({ message: "This works" });
-// });
 
 app.get("/api/flavors", async (req, res, next) => {
   try {
